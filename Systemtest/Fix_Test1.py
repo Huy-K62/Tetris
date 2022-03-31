@@ -395,7 +395,7 @@ def main(win):  # *
             current_piece = next_piece
             next_piece = get_shape()
             change_piece = False
-            clear_rows(grid, locked_positions)
+            score += clear_rows(grid, locked_positions) * 10
 
         draw_window(win, grid, score, last_score)
         draw_next_shape(next_piece, win)
