@@ -303,10 +303,13 @@ def draw_window(surface, grid, score=0, last_score = 0):
     surface.blit(label, (sx + 20, sy + 160))
 
     #Display last score
-    label = font.render('High Score: ' + last_score, 1, (255,255,255))
+    label = font.render('High Score', 1, (255,255,255))
+    label1 = font.render(last_score, 1, (255,255,255))
     sx = top_left_x - 240
     sy = top_left_y + 200
     surface.blit(label, (sx + 20, sy + 160))
+    surface.blit(label1, (sx + 80, sy + 205))
+
     #
     for i in range(len(grid)):
         for j in range(len(grid[i])):
@@ -392,7 +395,7 @@ def main(win):  # *
             current_piece = next_piece
             next_piece = get_shape()
             change_piece = False
-            clear_rows(grid, locked_positions)
+            score += clear_rows(grid, locked_positions) * 10
 
         draw_window(win, grid, score, last_score)
         draw_next_shape(next_piece, win)
