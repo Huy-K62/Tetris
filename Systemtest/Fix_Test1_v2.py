@@ -192,7 +192,6 @@ def check_lost(positions):
         x, y = pos
         if y < 1:
             return True
-
     return False
 
 #dropping shapes down the screen at random 
@@ -317,7 +316,7 @@ def draw_window(surface, grid, score=0, last_score = 0):
             i*block_size, block_size, block_size), 0)
 
     #draw contours around the cells
-    pygame.draw.rect(surface, (0,128,128), (top_left_x, top_left_y, play_width, play_height), 5)
+    pygame.draw.rect(surface, (0,128,128), (top_left_x, top_left_y, play_width, play_height), 2)
 
     draw_grid(surface, grid)
     #pygame.display.update()
@@ -327,7 +326,6 @@ def main(win):  # *
     last_score = max_score()
     locked_positions = {}
     grid = create_grid(locked_positions)
-
     change_piece = False
     run = True
     current_piece = get_shape()
@@ -335,19 +333,12 @@ def main(win):  # *
     clock = pygame.time.Clock()
     fall_time = 0
     fall_speed = 0.27 #falling speed
-    # level_time = 0
     score = 0
 
     while run:
         grid = create_grid(locked_positions)
         fall_time += clock.get_rawtime() #time falls
-        # level_time += clock.get_rawtime() #
         clock.tick()
-
-        # if level_time/1000 > 5:
-        #     level_time = 0
-        #     if level_time > 0.12:
-        #         level_time -= 0.005
 
         if fall_time/1000 > fall_speed:
             fall_time = 0

@@ -29,6 +29,6 @@ pygame.display.set_caption('Tetris')
 run = True
 while run:
     win.fill((0,0,0))
-    grid = [[(0,0,0) for _ in range(10)] for _ in range(20)]
+    grid = [[(10,10,10) for _ in range(10)] for _ in range(20)]
     draw_grid(win, grid)
     pygame.display.update()
