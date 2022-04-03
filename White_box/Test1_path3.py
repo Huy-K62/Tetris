@@ -6,10 +6,10 @@ def draw_grid(surface, grid):
     sy = top_left_y
     #Traverse 20 rows, draw 20 lines with color (0,128,128) that is 20 horizontal lines, 
     #each line is separated by 1 block_size = 30, starting from top_left_x position and ending top_left_x + play_width
-    for i in range(1):
+    for i in range(len(grid)):
         pygame.draw.line(surface, (0,128,128), (sx, sy), (sx + play_width, sy))
         #iterate through each cell in 1 row, draw 10 colored lines (0,128,128) that is 10 vertical rows, 
-        #each line is separated by 1 block_size = 30
+        # #each line is separated by 1 block_size = 30
         # for j in range(1):
         #     pygame.draw.line(surface, (0, 128, 128), (sx, sy),(sx, sy + play_height))
 
