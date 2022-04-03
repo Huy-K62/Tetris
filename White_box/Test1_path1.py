@@ -1,5 +1,4 @@
 import pygame
-
 pygame.font.init() 
    
 def draw_grid(surface, grid):
@@ -18,16 +17,15 @@ s_width = 800
 s_height = 700
 play_width = 300  # meaning 300 // 10 = 30 width per block
 play_height = 600  # meaning 600 // 20 = 30 height per block
-
 top_left_x = (s_width - play_width) // 2 
-top_left_y = s_height - play_height
-    
+top_left_y = s_height - play_height 
 win = pygame.display.set_mode((s_width, s_height))
 pygame.display.set_caption('Tetris')
-run = True
-while run:
+
+while True:
     win.fill((0,0,0))
     grid = [[(0,0,0) for _ in range(10)] for _ in range(20)]
-    draw_grid(win, grid)
+    print(grid) #test path1
+    #draw_grid(win, grid)
     pygame.display.update()
 
